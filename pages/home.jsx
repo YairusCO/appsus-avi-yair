@@ -1,45 +1,18 @@
-import {After} from '../cmps/After.jsx'
 
 
 export class Home extends React.Component {
-    
-    state = {
-        user: {
-            score: 10,
-            age: 20,
-        },
 
-        color: 'red'
-    }
 
-    incScore = () => {
-        console.log(this.state);
-        const userCopy = this.state.user
-        userCopy.score = userCopy.score+1
-        this.setState({
-            user: {...userCopy}
-         }, console.log(this.state))
-
-        // WRONG WAY! //
-        //  this.setState({
-        //     user: userCopy
-        //  }, ()=>{
-        //      console.log('state: ', this.state);
-        //  })
-    }
-
-    componentDidMount() {
-        console.log(this);
-
-    }
 
     render() {
         return (
             <section>
-                <h2>Home Sweet Home</h2>
-                <h3>{this.state.user.score}</h3>
-                <After incScore={this.incScore} />
+                <img onClick={() => this.props.history.push('/book')} className="missbook-home" src="assets/img/miss.png" />
+                <h1 onClick={() => this.props.history.push('/book')} className="title-home">Miss Book</h1>
+                <h4 >Reading is a conversation. All books talk. But a good book listens as well.</h4>
+
             </section>
         )
     }
 }
+
