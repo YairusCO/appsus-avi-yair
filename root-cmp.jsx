@@ -9,14 +9,13 @@ const Router = ReactRouterDOM.HashRouter;
 const { Route, Switch } = ReactRouterDOM;
 
 
-// Simple React Component
+
 export class App extends React.Component {
     render() {
         return (
             <Router>
                   <AppHeader />
                 <section className="app">
-                    {/* <AppHeader /> */}
                     <Switch>
                         <Route path="/keep" component={KeepApp} />
                         <Route path="/mail" component={MailApp} />

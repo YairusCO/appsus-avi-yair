@@ -5,26 +5,32 @@ const { Link } = ReactRouterDOM;
 
 export class MailApp extends React.Component {
 
-    
-    state = {
-        msgs: [],
-        filterBy: {
-            subject: '',
-            isRead: false
-        },
-        body: ''
-    };
-
-    componentDidMount() {
-        this.loadMsgs();
+    constructor(props) {
+        super(props);
+        this.state = {
+            inbox: [],
+            filter: '',
+            currentInboxMsg: null,
+        };
     }
- 
+   
+    componentDidMount() {
+        this.props.api
+            .getInbox()
+            .then(inbox => {
+              
+                this.setState({ inbox });
+            })
+    }
 
-    loadMsgs = () => {
-        mailService.query().then(msgs => {
-            this.setState({ msgs });
-        });
-    };
+    filterChange = (event) => {
+        this.setState({ filter: event.target.value });
+    }
+
+    showInDialog(currentInboxMsg){
+        console.log(currentInboxMsg)
+        this.setState({currentInboxMsg})
+    }
 
     get msgsForDisplay() {
         const { filterBy } = this.state;
@@ -33,11 +39,16 @@ export class MailApp extends React.Component {
     }
 
     render() {
-     
+        const { filter } = this.state;
+        const inboxFilterd = (
+            filter
+            ? this.state.inbox.filter((msg) => msg.subject.toLowerCase().includes(filter.toLowerCase()))
+            : this.state.inbox
+        );
         return (
             <section>
                 <h1 >Mail.</h1>
-                <MailList msgs={msgsForDisplay} onRemove={this.onRemovePet} />
+                <MailList msgs={msgsForDisplay} onRemove={this.onRemove} />
             </section>
         )
     }

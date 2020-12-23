@@ -32,10 +32,32 @@ li {
 h1 {
     padding: 5px;
     color:  #333;
-    display: inline-block;
+    display: block;
     font-family: 'Bebas Neue', cursive;
     font-size: 2.3em;
     text-align: center;
 
 }
+
+.note-preview{
+    width: 300px;
+    background-color: #fff;
+    color: rgb(88, 80, 80);
+    padding: 10px;
+    margin:auto;
+    border-radius: 10px;
+    text-align: left;
+    margin-left:10px;
+    margin-right:10px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.note-preview h4{
+    color: rgb(88, 80, 80);
+    font-size: 1em;
+ 
+}
+
+
 
