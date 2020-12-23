@@ -8,7 +8,7 @@ export class Home extends React.Component {
         return (
             <section>
             
-                <h1 >Reading is a conversation. All books talk. But a good book listens as well.</h1>
+                <h1 >Appsus</h1>
 
             </section>
         )

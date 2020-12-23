@@ -7,9 +7,9 @@ function _AppHeader(props) {
     return <nav>
         <ul>
             <li><NavLink activeClassName="my-active" exact to="/">Home</NavLink></li>
-            <li><NavLink to="/book">My Books</NavLink></li>
-            <li><NavLink to="/about">About</NavLink></li>
-            <li><NavLink to="/addbook">Add Book</NavLink></li>
+            <li><NavLink to="/keep">Keep</NavLink></li>
+            <li><NavLink to="/mail">Mail</NavLink></li>
+
         </ul>
 
     </nav>;
