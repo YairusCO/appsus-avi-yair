@@ -1,24 +1,35 @@
-import {getInbox} from './services/apis/mail-services.js';
-
+import {mailService} from './services/apis/mail-services.js';
+import { MailList } from './cmps/MailList.jsx';
+import { MailFilter } from "./cmps/MailFilter.jsx";
+const { Link } = ReactRouterDOM;
 
 export class MailApp extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            inbox: [],
-            filter: '',
-            currentInboxMsg: null,
-        };
-    }
+    state = {
+        msgs: [],
+        filterBy: {
+            subject: '',
+            isRead: false
+        },
+    };
    
     componentDidMount() {
-        this.props.api
-            .getInbox()
-            .then(inbox => {
-              
-                this.setState({ inbox });
-            })
+        this.loadMsgs(); 
+    }
+
+    componentWillUnmount() {
+    }
+
+    loadMsgs = () => {
+        mailService.query().then(msgs => {
+            this.setState({ msgs });
+        });
+    }
+
+    onRemoveMsg = (msgId) => {
+        msgService.remove(msgId).then(() => {
+            this.loadMsgs()
+        })
     }
 
     filterChange = (event) => {
@@ -30,24 +41,31 @@ export class MailApp extends React.Component {
         this.setState({currentInboxMsg})
     }
 
+    getMsgsForDisplay = () => {
+        const { filterBy } = this.state;
+        const filterRegex = new RegExp(filterBy.subject, 'i');
+        return this.state.msgs.filter(msg => filterRegex.test(msg.subject));
+    }
+    get msgsForDisplay (){
+        const { filterBy } = this.state;
+        const filterRegex = new RegExp(filterBy.subject, 'i');
+        return this.state.msgs.filter(msg => filterRegex.test(msg.subject));
+    }
+
+    onSetFilter = (filterBy) => {
+        console.log('filterBy:', filterBy);
+        this.setState({ filterBy });
+    }
+
     render() {
-        const { filter } = this.state;
-        const inboxFilterd = (
-            filter
-            ? this.state.inbox.filter((msg) => msg.subject.toLowerCase().includes(filter.toLowerCase()))
-            : this.state.inbox
-        );
+        const msgsForDisplay = this.msgsForDisplay;
         return (
             <section>
-                <h1 >Mail.</h1>
-                <div>
-                <input type='text' placeholder='Type for search...' onChange={this.filterChange} />
-                </div>
-                <div>
-               <getInbox inbox={inboxFilterd} />
-                </div>
+                  <MailFilter setFilter={this.onSetFilter} />
+                <h2>Mail</h2>
+                <MailList msgs={msgsForDisplay} onRemove={this.onRemove} />
             </section>
-        )
+        );
     }
 }
 
