@@ -41,14 +41,22 @@ h1 {
 
 .note-preview{
     width: 300px;
-    background-color: rgb(88, 80, 80);
+    background-color: #fff;
+    color: rgb(88, 80, 80);
     padding: 10px;
     margin:auto;
+    border-radius: 10px;
     text-align: left;
     margin-left:10px;
     margin-right:10px;
     margin-top: 10px;
     display: inline-block;
+}
+
+.note-preview h4{
+    color: rgb(88, 80, 80);
+    font-size: 1em;
+ 
 }
 
 
