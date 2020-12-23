@@ -1,51 +1,34 @@
-import {getInbox} from './services/apis/mail-services.js';
+import {mailService} from './services/apis/mail-services.js';
 
 
 export class MailApp extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            inbox: [],
-            filter: '',
-            currentInboxMsg: null,
-        };
-    }
-   
+    
+    state = {
+        msgs: [],
+        filterBy: {
+            subject: '',
+            isRead: false
+        },
+        body: ''
+    };
+
     componentDidMount() {
-        this.props.api
-            .getInbox()
-            .then(inbox => {
-              
-                this.setState({ inbox });
-            })
+        this.loadMsgs();
     }
+ 
 
-    filterChange = (event) => {
-        this.setState({ filter: event.target.value });
-    }
-
-    showInDialog(currentInboxMsg){
-        console.log(currentInboxMsg)
-        this.setState({currentInboxMsg})
-    }
+    loadMsgs = () => {
+        mailService.query().then(msgs => {
+            this.setState({ msgs });
+        });
+    };
 
     render() {
-        const { filter } = this.state;
-        const inboxFilterd = (
-            filter
-            ? this.state.inbox.filter((msg) => msg.subject.toLowerCase().includes(filter.toLowerCase()))
-            : this.state.inbox
-        );
+     
         return (
             <section>
                 <h1 >Mail.</h1>
-                <div>
-                <input type='text' placeholder='Type for search...' onChange={this.filterChange} />
-                </div>
-                <div>
-               <getInbox inbox={inboxFilterd} />
-                </div>
             </section>
         )
     }
