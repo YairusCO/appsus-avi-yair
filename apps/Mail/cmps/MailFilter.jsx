@@ -25,7 +25,7 @@ export class MailFilter extends React.Component {
         return <section className="msg-filter">
             <input type="text" name="name"
                 value={this.state.filterBy.subject}
-                placeholder="Filter by subject"
+                placeholder="Filter by name"
                 autoComplete="off"
                 onChange={this.handleChange} />
         </section>;
