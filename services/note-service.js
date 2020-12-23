@@ -51,6 +51,7 @@ function _saveNotesToStorage(notesFromStorage = gNotes) {
 function getNotes (){
     var notes = [
         {
+            id: '1234a',
             type: "NoteText",
             isPinned: false,
             info: {
@@ -58,6 +59,7 @@ function getNotes (){
             }
         },
         {
+            id: '5678b',
             type: "NoteText",
             isPinned: false,
             info: {
@@ -66,6 +68,7 @@ function getNotes (){
         },
     
         {
+            id: '91011c',
             type: "NoteText",
             isPinned: false,
             info: {
@@ -73,6 +76,7 @@ function getNotes (){
             }
         },
         {
+            id: '121314d',
             type: "NoteText",
             isPinned: false,
             info: {
