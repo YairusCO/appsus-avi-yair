@@ -3,9 +3,9 @@ import { utilService } from '../services/util-service.js';
 
 
 export const noteService = {
-  query,
-  getById
-//   saveNote,
+    query,
+    getById,
+    saveNote
 
 };
 ///
@@ -19,44 +19,44 @@ var gNotes = _createNotes();
 window.theNotes = gNotes
 
 function query() {
-  return Promise.resolve(gNotes);
+    return Promise.resolve(gNotes);
 }
 
 
 function _createNotes() {
-  var notesFromStorage = storageService.loadFromStorage(KEY);
-  if (!notesFromStorage || !notesFromStorage.length) {
-    notesFromStorage = getNotes();
-  }
-  _saveNotesToStorage(notesFromStorage);
-  return notesFromStorage;
+    var notesFromStorage = storageService.loadFromStorage(KEY);
+    if (!notesFromStorage || !notesFromStorage.length) {
+        notesFromStorage = getNotes();
+    }
+    _saveNotesToStorage(notesFromStorage);
+    return notesFromStorage;
 }
 
 function getById(id) {
-  var note = gNotes.find(note => note.id === id)
-  return Promise.resolve(note)
+    var note = gNotes.find(note => note.id === id)
+    return Promise.resolve(note)
 }
 
-// function saveNote(note) {
- 
-//   gNotes.push(note)
-//   _saveNotesToStorage();
+function saveNote(note) {
+    note.id = utilService.makeId()
+    gNotes.push({note})
+    _saveNotesToStorage();
 
-//   return Promise.resolve(note)
-// }
+    return Promise.resolve(gNotes)
+}
 
 function _saveNotesToStorage(notesFromStorage = gNotes) {
     storageService.saveToStorage(KEY, notesFromStorage)
 }
 
-function getNotes (){
+function getNotes() {
     var notes = [
         {
             id: '1234a',
             type: "NoteText",
             isPinned: false,
             info: {
-              txt: "Fullstack Me Baby!"
+                txt: "Fullstack Me Baby!"
             }
         },
         {
@@ -64,16 +64,16 @@ function getNotes (){
             type: "NoteText",
             isPinned: false,
             info: {
-              txt: "Render a list of components, use dynamic components to show different types of notes"
+                txt: "Render a list of components, use dynamic components to show different types of notes"
             }
         },
-    
+
         {
             id: '91011c',
             type: "NoteText",
             isPinned: false,
             info: {
-              txt: "Allow creating, updating and deleting notes (CRUD)"
+                txt: "Allow creating, updating and deleting notes (CRUD)"
             }
         },
         {
@@ -81,10 +81,10 @@ function getNotes (){
             type: "NoteText",
             isPinned: false,
             info: {
-              txt: "For React, here is the basic idea of implementing Dynamic components"
+                txt: "For React, here is the basic idea of implementing Dynamic components"
             }
         }
-    
+
     ]
     return notes;
 }
