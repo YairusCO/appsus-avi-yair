@@ -1,20 +1,24 @@
+const { Link } = ReactRouterDOM;
 
-export const MsgPreview = ({ msg }) => {
-    const { subject, body, sentAt, isRead } = msg
-    return (
-        <div>
 
-            <div>
-                {subject}
-            </div>  
-            <div>
-                <div>
-                {`${new Date(sentAt)}`}
+export function MsgPreview({ msg, onRemove }) {
+
+    return <article className="msg-preview">
+        {/* <Link to={`/msg/${msg.id}`}> */}
+            <h1>{msg.subject}</h1>
+        {/* </Link> */}
+        <h2>body: {msg.body}</h2>
+        <div>   <div>
+                {`${new Date(msg.sentAt)}`}
                 </div>
-                <div>
-                {body}
-                </div>
-            </div>
+
+            {/* <Link to={`/msg/edit/${msg.id}`}>Edit msg</Link> */}
+            <button onClick={() => {
+                onRemove(msg.id)
+            }}
+            >Remove</button>
         </div>
-    )
+
+    </article>
+
 }

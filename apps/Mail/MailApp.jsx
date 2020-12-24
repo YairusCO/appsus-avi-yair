@@ -1,4 +1,4 @@
-import { mailService } from './services/apis/mail-service.js';
+import { mailService } from './services/mail-service.js';
 import { MailList } from './cmps/MailList.jsx';
 import { MailFilter } from "./cmps/MailFilter.jsx";
 
@@ -8,7 +8,7 @@ export class MailApp extends React.Component {
         msgs: [],
         filterBy: {
             subject: '',
-            isRead: false
+            read: false
         },
     };
    
@@ -21,19 +21,18 @@ export class MailApp extends React.Component {
 
     loadMsgs = () => {
         mailService.query().then(msgs => {
-            debugger
             this.setState({ msgs });
         });
     }
 
     onRemoveMsg = (msgId) => {
-        msgService.remove(msgId).then(() => {
+        mailService.remove(msgId).then(() => {
             this.loadMsgs()
         })
     }
 
     filterChange = (event) => {
-        this.setState({ filter: event.target.value });
+        this.setState({ filterBy: event.target.value });
     }
 
     showInDialog(currentInboxMsg){
@@ -63,7 +62,7 @@ export class MailApp extends React.Component {
             <section>
                   <MailFilter setFilter={this.onSetFilter} />
                 <h2>Mail</h2>
-                <MailList msgs={this.msgsForDisplay} onRemove={this.onRemove} />
+                <MailList msgs={this.msgsForDisplay} onRemove={this.onRemoveMsg} />
             </section>
         );
     }

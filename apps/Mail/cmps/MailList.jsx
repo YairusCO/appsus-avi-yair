@@ -4,8 +4,8 @@ export function MailList({ msgs, onRemove }) {
 
     return (
         <section className="msg-list">
-            {msgs.map((msg,idx) => {
-                return <MsgPreview key={`mail-${idx}`} msg={msg}
+            {msgs.map(msg => {
+                return <MsgPreview key={msg.id} msg={msg}
                     onRemove={onRemove} />;
             })
             }
