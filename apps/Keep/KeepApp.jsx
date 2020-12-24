@@ -44,11 +44,7 @@ export class KeepApp extends React.Component {
         });
     };
   
-    // onRemovePet = (petId) => {
-    //     petService.remove(petId).then(() => {
-    //         this.loadPets();
-    //     });
-    // };
+  
 
 
 
