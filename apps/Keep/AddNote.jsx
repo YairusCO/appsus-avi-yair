@@ -3,14 +3,18 @@ export class AddNote extends React.Component {
 
     state = {
 
-        note: {
+        note:    {
             id: '',
             type: 'NoteText',
+            isPinned: false,
             info: {
                 txt: ''
             }
         }
     };
+
+ 
+
 
     onAddNote = (ev) => {
         ev.preventDefault();
@@ -19,7 +23,8 @@ export class AddNote extends React.Component {
     }
 
     onInputChange = (ev) => {
-        const value = ev.target.type === ev.target.value;
+        const value = ev.target.type === 'number' ? +ev.target.value
+        : ev.target.value;
 
         const noteCopy = { ...this.state.note };
         noteCopy[ev.target.name] = value;
@@ -33,11 +38,9 @@ export class AddNote extends React.Component {
 
         const { note } = this.state
         return (<section className="form-note">
-            <form onSubmit={this.onAddNote}>
-                <div>
-                    <label htmlFor="" className="newNote">Take a Note:</label>
-                    <textarea value={note.info.txt} onChange={this.onInputChange} name="note" id="" cols="20" rows="10"></textarea>
-                </div>
+            <form className="form-input" onSubmit={this.onAddNote}>
+               
+                <input value={note.info.txt} onChange={e => this.onInputChange(e.target.value)} type="text" name="info.txt" placeholder="What's on your mind?" />
                 <button className="keep-btn" type="submit">KEEP</button>
             </form>
         </section>
