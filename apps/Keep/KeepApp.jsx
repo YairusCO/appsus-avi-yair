@@ -3,10 +3,12 @@ import { NoteList } from "./NoteList.jsx";
 import { NotePreview } from "./NotePreview.jsx";
 import { AddNote } from "./AddNote.jsx";
 
+
+
 export class KeepApp extends React.Component {
 
     state = {
-        id: '',
+        // id: '',
         notes: [],
         filterBy: {
             txt: ''
@@ -33,9 +35,10 @@ export class KeepApp extends React.Component {
     };
 
     addNote = (note) => {
-        noteService.saveNote(this.state.notes, note)
-            .then(notes => this.setState({ notes }))
-            // loadNotes
+        noteService.saveNote(note)
+            .then (() => {
+                this.loadNotes();
+            });
     }
 
     onRemoveNote = (noteId) => {

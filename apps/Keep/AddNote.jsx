@@ -25,7 +25,7 @@ export class AddNote extends React.Component {
         const value = ev.target.type === 'number' ? +ev.target.value
         : ev.target.value;
 
-        const noteCopy = { ...this.state.note };
+        const noteCopy = JSON.parse(JSON.stringify(this.state.note))
         noteCopy.info[ev.target.name] = value;
 
         this.setState({
@@ -40,7 +40,7 @@ export class AddNote extends React.Component {
         const { note } = this.state
         return (<section className="form-note">
             <form className="form-input" onSubmit={this.onAddNote}>
-                <input value={note.info.txt} onChange={this.onInputChange} type="text" name="txt" placeholder="What's on your mind?" />
+                <input className="keep-input" value={note.info.txt} onChange={this.onInputChange} type="text" name="txt" placeholder="What's on your mind?" />
                 <button className="keep-btn" type="submit">KEEP</button>
             </form>
         </section>
