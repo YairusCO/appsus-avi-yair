@@ -31,6 +31,12 @@ export class MailApp extends React.Component {
         })
     }
 
+    onReadMsg = (msgId) => {
+        mailService.isRead(msgId).then(() => {
+            this.loadMsgs()
+        })
+    }
+
     filterChange = (event) => {
         this.setState({ filterBy: event.target.value });
     }
@@ -62,7 +68,7 @@ export class MailApp extends React.Component {
             <section>
                   <MailFilter setFilter={this.onSetFilter} />
                 <h2>Mail</h2>
-                <MailList msgs={this.msgsForDisplay} onRemove={this.onRemoveMsg} />
+                <MailList msgs={this.msgsForDisplay} onRemove={this.onRemoveMsg} onRead={this.onReadMsg} />
             </section>
         );
     }

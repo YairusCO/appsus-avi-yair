@@ -1,7 +1,7 @@
 const { Link } = ReactRouterDOM;
 
 
-export function MsgPreview({ msg, onRemove }) {
+export function MsgPreview({ msg, onRemove, onRead }) {
 
     return <article className="msg-preview">
         {/* <Link to={`/msg/${msg.id}`}> */}
@@ -16,7 +16,11 @@ export function MsgPreview({ msg, onRemove }) {
             <button onClick={() => {
                 onRemove(msg.id)
             }}
-            >Remove</button>
+            >X</button>
+             <button onClick={() => {
+                onRead(msg.id)
+            }}
+            >.</button>
         </div>
 
     </article>
