@@ -18,8 +18,7 @@ export class AddNote extends React.Component {
 
     onAddNote = (ev) => {
         ev.preventDefault();
-        this.props.addNote(this.state.note)
-
+        this.props.addNote(this.state.note);
     }
 
     onInputChange = (ev) => {
@@ -27,11 +26,13 @@ export class AddNote extends React.Component {
         : ev.target.value;
 
         const noteCopy = { ...this.state.note };
-        noteCopy[info.txt] = value;
+        noteCopy.info[ev.target.name] = value;
 
         this.setState({
             note: noteCopy
         });
+
+       
     }
 
     render() {
@@ -39,8 +40,7 @@ export class AddNote extends React.Component {
         const { note } = this.state
         return (<section className="form-note">
             <form className="form-input" onSubmit={this.onAddNote}>
-               
-                <input value={note.info.txt} onChange={this.onInputChange} type="text" name="info.txt" placeholder="What's on your mind?" />
+                <input value={note.info.txt} onChange={this.onInputChange} type="text" name="txt" placeholder="What's on your mind?" />
                 <button className="keep-btn" type="submit">KEEP</button>
             </form>
         </section>

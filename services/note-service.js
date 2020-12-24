@@ -4,6 +4,7 @@ import { utilService } from '../services/util-service.js';
 
 export const noteService = {
     query,
+    remove,
     getById,
     saveNote
 
@@ -37,12 +38,52 @@ function getById(id) {
     return Promise.resolve(note)
 }
 
-function saveNote(note) {
-    note.id = utilService.makeId()
-    gNotes.push({note})
+// function save(note) {
+//     if (note.id) {
+//         _update(note);
+//     } else {
+//         _add(note);
+//     }
+// }
+
+// function  _add(note) {
+
+//     const noteToAdd = {
+//         ...note,
+//         id: utilService.makeId()
+//     };
+
+//     gNotes = [noteToAdd, ...gNotes]; 
+
+//     return Promise.resolve(noteToAdd)
+//     // return noteToAdd;
+// }
+
+
+function saveNote(notes, note) {
+    const noteToAdd = {
+        ...note,
+        id: utilService.makeId()
+    };
+
+    gNotes = [noteToAdd, ...gNotes];
+
     _saveNotesToStorage();
 
     return Promise.resolve(gNotes)
+}
+// function saveNote(notes, note) {
+//     note.id = utilService.makeId()
+//     notes.unshift(note)
+
+//     _saveNotesToStorage(notes);
+
+//     return Promise.resolve(notes)
+// }
+
+function remove(noteId) {
+    gNotes = gNotes.filter(note => note.id !== noteId);
+    return Promise.resolve(gNotes);
 }
 
 function _saveNotesToStorage(notesFromStorage = gNotes) {

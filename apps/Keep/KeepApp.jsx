@@ -1,10 +1,12 @@
 import { noteService } from "../../services/note-service.js";
 import { NoteList } from "./NoteList.jsx";
+import { NotePreview } from "./NotePreview.jsx";
 import { AddNote } from "./AddNote.jsx";
 
 export class KeepApp extends React.Component {
 
     state = {
+        id: '',
         notes: [],
         filterBy: {
             txt: ''
@@ -33,9 +35,20 @@ export class KeepApp extends React.Component {
     addNote = (note) => {
         noteService.saveNote(this.state.notes, note)
             .then(notes => this.setState({ notes }))
-        // this.loadBook()
+            // loadNotes
     }
+
+    onRemoveNote = (noteId) => {
+        noteService.remove(noteId).then(() => {
+            this.loadNotes();
+        });
+    };
   
+    // onRemovePet = (petId) => {
+    //     petService.remove(petId).then(() => {
+    //         this.loadPets();
+    //     });
+    // };
 
 
 
@@ -46,7 +59,7 @@ export class KeepApp extends React.Component {
 
                 <h1 >Keep.</h1>
                 <AddNote addNote={this.addNote} />
-                <NoteList notes={this.getNotesForDisplay()} />
+                <NoteList notes={this.getNotesForDisplay()} onRemove={this.onRemoveNote} />
 
 
             </section>
