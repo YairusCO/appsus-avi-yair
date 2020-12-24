@@ -1,7 +1,6 @@
-import {mailService} from './services/apis/mail-services.js';
+import { mailService } from './services/apis/mail-service.js';
 import { MailList } from './cmps/MailList.jsx';
 import { MailFilter } from "./cmps/MailFilter.jsx";
-const { Link } = ReactRouterDOM;
 
 export class MailApp extends React.Component {
 
@@ -22,6 +21,7 @@ export class MailApp extends React.Component {
 
     loadMsgs = () => {
         mailService.query().then(msgs => {
+            debugger
             this.setState({ msgs });
         });
     }
@@ -58,12 +58,12 @@ export class MailApp extends React.Component {
     }
 
     render() {
-        const msgsForDisplay = this.msgsForDisplay;
+        
         return (
             <section>
                   <MailFilter setFilter={this.onSetFilter} />
                 <h2>Mail</h2>
-                <MailList msgs={msgsForDisplay} onRemove={this.onRemove} />
+                <MailList msgs={this.msgsForDisplay} onRemove={this.onRemove} />
             </section>
         );
     }
