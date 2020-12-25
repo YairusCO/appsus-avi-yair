@@ -46,6 +46,13 @@ export class KeepApp extends React.Component {
             this.loadNotes();
         });
     };
+
+    onEditNote = (noteId, updated) => {
+        
+        noteService.edit(noteId, updated).then(() => {
+            this.loadNotes();
+        });
+    };
   
   
 
@@ -58,7 +65,7 @@ export class KeepApp extends React.Component {
 
                 <h1 >Keep.</h1>
                 <AddNote addNote={this.addNote} />
-                <NoteList notes={this.getNotesForDisplay()} onRemove={this.onRemoveNote} />
+                <NoteList notes={this.getNotesForDisplay()} onRemove={this.onRemoveNote} onEdit={this.onEditNote} />
 
 
             </section>

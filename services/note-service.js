@@ -5,6 +5,7 @@ import { utilService } from '../services/util-service.js';
 export const noteService = {
     query,
     remove,
+    edit,
     getById,
     saveNote
 
@@ -80,6 +81,14 @@ function saveNote(note) {
     _saveNotesToStorage();
 
     return Promise.resolve(gNotes)
+}
+
+function edit(noteId, updated){
+    var note = gNotes.find(note => note.id === noteId);
+    note.info.txt= updated
+    _saveNotesToStorage();
+    return Promise.resolve(gNotes);
+
 }
 
 function remove(noteId) {

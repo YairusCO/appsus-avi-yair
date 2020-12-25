@@ -32,7 +32,7 @@ export class NoteEdit extends React.Component {
 
     onEditNote = (ev) => {
         ev.preventDefault();
-        noteService.editNote(this.state.nite);
+        noteService.editNote(this.state.note);
         this.props.history.push('/keep');
 
     };

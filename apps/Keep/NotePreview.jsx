@@ -1,5 +1,5 @@
 const { Link } = ReactRouterDOM;
-export function NotePreview({ note, onRemove }) {
+export function NotePreview({ note, onRemove, onEdit }) {
 
 
     return (
@@ -9,7 +9,12 @@ export function NotePreview({ note, onRemove }) {
                     onRemove(note.id);
                 }}>X</button>
 
-                <h4 contentEditable="true">{note.info.txt}</h4>
+                <h4 contentEditable="true"
+                onInput={(ev) => {console.log(note.id, 'txt:', ev.currentTarget.textContent)
+                    ev.preventDefault();
+                    onEdit(note.id, ev.currentTarget.textContent)
+                }}
+                >{note.info.txt}</h4>
 
 
 
