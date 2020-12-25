@@ -8,7 +8,7 @@ export class MailApp extends React.Component {
         msgs: [],
         filterBy: {
             subject: '',
-            read: false,
+            isRead: true,
             category: "inbox"
         },
     };
@@ -50,7 +50,7 @@ export class MailApp extends React.Component {
     getMsgsForDisplay = () => {
         const { filterBy } = this.state;
         const filterRegex = new RegExp(filterBy.subject, 'i');
-        const filteredByCategory =  this.state.msgs.filter(msg => msg.category === filterBy.category)
+        const filteredByCategory =  this.state.msgs.filter(msg => msg.category === filterBy.category) // msg.isRead === filterBy.isRead 
         return filterBy.subject? filteredByCategory.filter(msg => filterRegex.test(msg.subject)) : filteredByCategory
        
     }

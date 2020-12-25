@@ -2,7 +2,7 @@ export class MailFilter extends React.Component {
   state = {
     filterBy: {
       subject: "",
-      read: false,
+      isRead: true,
       Category: "inbox"
     },
   };
@@ -14,6 +14,24 @@ export class MailFilter extends React.Component {
 
   handleMailBox = (category) => {
     this.props.setFilter({ category });
+  }
+
+  handleRead = (ev) => {
+    const getVal = ev.target.value;
+    var isRead
+    switch (getVal) {
+        case '':
+            isRead='';
+          break;
+        case 'read':
+            isRead=true
+            break;
+        case 'not-read':
+            isRead=false;
+          break;
+    }
+    console.log(isRead);
+    this.props.setFilter({ isRead });
   }
 
   render() {
@@ -31,12 +49,13 @@ export class MailFilter extends React.Component {
           autoComplete="off"
           onChange={this.handleChange}
         />
-        <select name="read" onChange={this.handleChange}>
-          <option value="all">All</option>
-          <option value="read">Read</option>
-          <option value="not-read">Not read</option>
+        <select name="read"  onChange= {this.handleRead} >
+          <option value=""  >All</option>
+          <option value="read"  >Read</option>
+          <option value="not-read" >Not read</option>
         </select>
       </section>
     );
   }
 }
+//onChange={() =>{this.handleRead().value}}
