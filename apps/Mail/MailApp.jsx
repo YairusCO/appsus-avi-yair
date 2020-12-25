@@ -8,7 +8,8 @@ export class MailApp extends React.Component {
         msgs: [],
         filterBy: {
             subject: '',
-            read: false
+            read: false,
+            Category: "inbox"
         },
     };
    
@@ -58,7 +59,6 @@ export class MailApp extends React.Component {
     }
 
     onSetFilter = (filterBy) => {
-        console.log('filterBy:', filterBy);
         this.setState({ filterBy });
     }
 

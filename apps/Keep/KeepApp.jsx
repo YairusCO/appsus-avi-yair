@@ -33,6 +33,7 @@ export class KeepApp extends React.Component {
     };
 
     addNote = (note) => {
+        debugger
         noteService.saveNote(this.state.notes, note)
             .then(notes => this.setState({ notes }))
             // loadNotes

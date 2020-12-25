@@ -22,12 +22,18 @@ function _createMsgs() {
 
 function _getDemoMsgs() {
     var msgs = [
-        { subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt: 1451133930594, id: 1 },
-        { subject: 'hello', body: 'Pick up!', isRead: true, sentAt: 1551133930595, id: 2 },
-        { subject: 'bye!', body: 'Pick up!', isRead: false, sentAt: 1651133930596, id: 3 },
-        { subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt: 1451133930594, id: 4 },
-        { subject: 'hello', body: 'Pick up!', isRead: true, sentAt: 1551133930595, id: 5 },
-        { subject: 'bye!', body: 'Pick up!', isRead: false, sentAt: 1651133930596, id: 6 },
+        { subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt: 1451133930594, id: 1, category: "inbox" },
+        { subject: 'hello', body: 'Pick up!', isRead: true, sentAt: 1551133930595, id: 2, Category: "inbox" },
+        { subject: 'bye!', body: 'Pick up!', isRead: false, sentAt: 1651133930596, id: 3, Category: "inbox" },
+        { subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt: 1451133930594, id: 4, Category: "inbox" },
+        { subject: 'hello', body: 'Pick up!', isRead: true, sentAt: 1551133930595, id: 5, Category: "inbox" },
+        { subject: 'bye!', body: 'Pick up!', isRead: false, sentAt: 1651133930596, id: 6, Category: "inbox" },
+        { subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt: 1451133930594, id: 7, Category: "send" },
+        { subject: 'hello', body: 'Pick up!', isRead: true, sentAt: 1551133930595, id: 8, Category: "send" },
+        { subject: 'bye!', body: 'Pick up!', isRead: false, sentAt: 1651133930596, id: 9, Category: "send" },
+        { subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt: 1451133930594, id: 10, Category: "send" },
+        { subject: 'hello', body: 'Pick up!', isRead: true, sentAt: 1551133930595, id: 11, Category: "send" },
+        { subject: 'bye!', body: 'Pick up!', isRead: false, sentAt: 1651133930596, id: 12, Category: "send" },
     ];
     return msgs;
 }
