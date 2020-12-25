@@ -54,6 +54,9 @@ export function NotePreview({ note, onRemove, onEdit, onChangeColor }) {
                 onChangeColor(note.id, "pink");
             }}>o</button>
 
+            <p className="created-at">Created at {note.createdAt}</p>
+       
+
 
         </article >
 

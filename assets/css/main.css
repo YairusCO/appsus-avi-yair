@@ -40,6 +40,28 @@ h1 {
 
 }
 
+.misskeepLogo{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2em;
+    background-color: rgb(209, 230, 173);
+    padding: 10px;
+    margin-top:-5px;
+    transition: ease-in-out 600ms;
+}
+.misskeepLogo :hover{
+    transform: scale(1.1);
+    
+}
+.misskeep {
+    margin-top: 10px;
+    width: 150px;
+    transition: ease-in-out 600ms;
+}
+.misskeep:hover{
+    transform: scale(1.1);
+    
+}
+
 .note-preview{
     width: 300px;
     background-color: #fff;
@@ -66,7 +88,7 @@ h1 {
 .keep-input {
     width: 320px;
     height: 50px;
-    background-color: #d1e6ad;
+    background-color:white;
     display: block;
     border:0px;
     border-radius: 10px;
@@ -118,6 +140,15 @@ h1 {
     transform: scale(1.2);
 }
 
+.created-at{
+    font-family: 'Bebas Neue', cursive;
+    font-size: .7em;
+    color: rgb(110, 109, 109);
+    text-align: left;
+
+}
+
+
 .white {
     color: rgb(255, 255, 255);
     background-color:rgb(255, 255, 255); 
@@ -132,8 +163,8 @@ h1 {
 }
 
 .green {
-    color: rgb(173, 238, 173);
-    background-color:rgb(173, 238, 173);  
+    color:  #d1e6ad;
+    background-color: #d1e6ad;  
 }
 
 .pink {

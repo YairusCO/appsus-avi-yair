@@ -36,7 +36,7 @@ export class KeepApp extends React.Component {
 
     addNote = (note) => {
         noteService.saveNote(note)
-            .then (() => {
+            .then(() => {
                 this.loadNotes();
             });
     }
@@ -48,26 +48,26 @@ export class KeepApp extends React.Component {
     };
 
     onEditNote = (noteId, updated) => {
-        
+
         noteService.edit(noteId, updated).then(() => {
             this.loadNotes();
         });
     };
 
     changeColor = (noteId, color) => {
-        
+
         noteService.changeBgc(noteId, color).then(() => {
             this.loadNotes();
         });
     };
-  
-  
+
+
 
     render() {
         return (
             <section>
-
-                <h1 >Keep.</h1>
+                <img className="misskeep" src="assets/img/misskeep.png" />
+                <h2 className="misskeepLogo">Miss Keep</h2>
                 <AddNote addNote={this.addNote} />
                 <NoteList notes={this.getNotesForDisplay()} onRemove={this.onRemoveNote} onEdit={this.onEditNote} onChangeColor={this.changeColor} />
 

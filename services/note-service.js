@@ -44,6 +44,7 @@ function getById(id) {
 
 function saveNote(note) {
     note.id = utilService.makeId()
+    note.createdAt = Date.now()
     gNotes.unshift(note)
 
     _saveNotesToStorage();
@@ -86,7 +87,8 @@ function getNotes() {
             info: {
                 txt: "2 lbs ground beef, salt and pepper, 2 Tablespoons butter, 2 Tablespoons all-purpose flour, 1/4 teaspoon mustard powder, 3/4 cup beer"
             },
-            backgroundColor: "yellow"
+            backgroundColor: "yellow",
+            createdAt: Date.now()
        
         },
 
@@ -97,7 +99,8 @@ function getNotes() {
             info: {
                 txt: "Barça have had 12 different goalscorers in LaLiga, more than their closest rivals Betis and Valladolid with 11 each. Cadiz, Elche and Eibar round off the top three with 6."
             },
-            backgroundColor: "purple"
+            backgroundColor: "purple",
+            createdAt: Date.now()
         },
 
         {
@@ -107,7 +110,8 @@ function getNotes() {
             info: {
                 txt: "Allow creating, updating and deleting notes (CRUD)"
             },
-            backgroundColor: "green"
+            backgroundColor: "green",
+            createdAt: Date.now()
         },
         {
             id: utilService.makeId(),
@@ -116,7 +120,8 @@ function getNotes() {
             info: {
                 txt: "For React, here is the basic idea of implementing Dynamic components"
             },
-            backgroundColor: "pink"
+            backgroundColor: "pink",
+            createdAt: Date.now()
         }
 
     ]
