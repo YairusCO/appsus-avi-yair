@@ -10,7 +10,7 @@ export function NotePreview({ note, onRemove, onEdit }) {
                 }}>X</button>
 
                 <h4 contentEditable="true"
-                onInput={(ev) => {console.log(note.id, 'txt:', ev.currentTarget.textContent)
+                onBlur={(ev) => {console.log(note.id, 'txt:', ev.currentTarget.textContent)
                     ev.preventDefault();
                     onEdit(note.id, ev.currentTarget.textContent)
                 }}
