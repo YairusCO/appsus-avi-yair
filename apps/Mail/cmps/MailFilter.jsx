@@ -8,30 +8,25 @@ export class MailFilter extends React.Component {
   };
 
   handleChange = (ev) => {
-    const callback = () => {
-        
-      this.props.setFilter(this.state.filterBy);
-
-    };
-
-    const filterBy = { ...this.state.filterBy };
-    filterBy[ev.target.name] = ev.target.value;
-    console.log('filterBy',filterBy);
-    // debugger
-    this.setState({ filterBy }, callback);
+    const subject = ev.target.value;
+    this.props.setFilter({ subject });
   };
+
+  handleMailBox = (category) => {
+    this.props.setFilter({ category });
+  }
 
   render() {
     return (
       <section className="msg-filter">
-                 <button onClick={this.handleChange} name="category" value = 'inbox'
+                 <button onClick={() => {this.handleMailBox('inbox')}}
             >inbox</button>
-                 <button onClick={this.handleChange} name="category" value = "send"
+                 <button onClick={() => {this.handleMailBox('sent')}}
             >send</button>
         <input
           type="text"
           name="subject"
-          value={this.state.filterBy.subject}
+          value={this.props.subjectFilter}
           placeholder="Filter by subject"
           autoComplete="off"
           onChange={this.handleChange}

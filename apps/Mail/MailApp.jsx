@@ -9,7 +9,7 @@ export class MailApp extends React.Component {
         filterBy: {
             subject: '',
             read: false,
-            Category: "inbox"
+            category: "inbox"
         },
     };
    
@@ -50,23 +50,24 @@ export class MailApp extends React.Component {
     getMsgsForDisplay = () => {
         const { filterBy } = this.state;
         const filterRegex = new RegExp(filterBy.subject, 'i');
-        return this.state.msgs.filter(msg => filterRegex.test(msg.subject));
+        const filteredByCategory =  this.state.msgs.filter(msg => msg.category === filterBy.category)
+        return filterBy.subject? filteredByCategory.filter(msg => filterRegex.test(msg.subject)) : filteredByCategory
+       
     }
     get msgsForDisplay (){
-        const { filterBy } = this.state;
-        const filterRegex = new RegExp(filterBy.subject, 'i');
-        return this.state.msgs.filter(msg => filterRegex.test(msg.subject));
+        return this.getMsgsForDisplay()
     }
 
     onSetFilter = (filterBy) => {
-        this.setState({ filterBy });
+      
+        this.setState({ filterBy: {...this.state.filterBy, ...filterBy } });
     }
 
     render() {
         
         return (
             <section>
-                  <MailFilter setFilter={this.onSetFilter} />
+                  <MailFilter setFilter={this.onSetFilter} subjectFilter={this.state.filterBy.subject} />
                 <h2>Mail</h2>
                 <MailList msgs={this.msgsForDisplay} onRemove={this.onRemoveMsg} onRead={this.onReadMsg} />
             </section>
