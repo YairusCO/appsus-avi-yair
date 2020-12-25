@@ -59,5 +59,24 @@ h1 {
  
 }
 
+.keep-input {
+    width: 350px;
+    height: 30px;
+    background-color: rgb(209, 230, 173);
+    display: inline-block;
+    border:0px;
+    border-radius: 10px;
+    margin:auto;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+.keep-btn {
+    width: 50px;
+    height: 30px;
+    border:0px;
+    border-radius: 10px;
+}
+
 
 

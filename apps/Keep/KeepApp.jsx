@@ -3,10 +3,12 @@ import { NoteList } from "./NoteList.jsx";
 import { NotePreview } from "./NotePreview.jsx";
 import { AddNote } from "./AddNote.jsx";
 
+
+
 export class KeepApp extends React.Component {
 
     state = {
-        id: '',
+        // id: '',
         notes: [],
         filterBy: {
             txt: ''
@@ -33,14 +35,28 @@ export class KeepApp extends React.Component {
     };
 
     addNote = (note) => {
+<<<<<<< HEAD
         debugger
         noteService.saveNote(this.state.notes, note)
             .then(notes => this.setState({ notes }))
             // loadNotes
+=======
+        noteService.saveNote(note)
+            .then (() => {
+                this.loadNotes();
+            });
+>>>>>>> b136249c245f20e866917f6193af695768b4e15a
     }
 
     onRemoveNote = (noteId) => {
         noteService.remove(noteId).then(() => {
+            this.loadNotes();
+        });
+    };
+
+    onEditNote = (noteId, updated) => {
+        
+        noteService.edit(noteId, updated).then(() => {
             this.loadNotes();
         });
     };
@@ -56,7 +72,7 @@ export class KeepApp extends React.Component {
 
                 <h1 >Keep.</h1>
                 <AddNote addNote={this.addNote} />
-                <NoteList notes={this.getNotesForDisplay()} onRemove={this.onRemoveNote} />
+                <NoteList notes={this.getNotesForDisplay()} onRemove={this.onRemoveNote} onEdit={this.onEditNote} />
 
 
             </section>
