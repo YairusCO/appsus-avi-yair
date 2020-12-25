@@ -35,17 +35,10 @@ export class KeepApp extends React.Component {
     };
 
     addNote = (note) => {
-<<<<<<< HEAD
-        debugger
-        noteService.saveNote(this.state.notes, note)
-            .then(notes => this.setState({ notes }))
-            // loadNotes
-=======
         noteService.saveNote(note)
             .then (() => {
                 this.loadNotes();
             });
->>>>>>> b136249c245f20e866917f6193af695768b4e15a
     }
 
     onRemoveNote = (noteId) => {
