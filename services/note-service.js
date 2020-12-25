@@ -6,6 +6,7 @@ export const noteService = {
     query,
     remove,
     edit,
+    changeBgc,
     getById,
     saveNote
 
@@ -39,40 +40,7 @@ function getById(id) {
     return Promise.resolve(note)
 }
 
-// function save(note) {
-//     if (note.id) {
-//         _update(note);
-//     } else {
-//         _add(note);
-//     }
-// }
 
-// function  _add(note) {
-
-//     const noteToAdd = {
-//         ...note,
-//         id: utilService.makeId()
-//     };
-
-//     gNotes = [noteToAdd, ...gNotes]; 
-
-//     return Promise.resolve(noteToAdd)
-//     // return noteToAdd;
-// }
-
-
-// function saveNote(note) {
-//     const noteToAdd = {
-//         ...note,
-//         id: utilService.makeId()
-//     };
-
-//     gNotes = [noteToAdd, ...gNotes];
-
-//     _saveNotesToStorage();
-  
-//     return Promise.resolve(gNotes)
-// }
 
 function saveNote(note) {
     note.id = utilService.makeId()
@@ -83,13 +51,22 @@ function saveNote(note) {
     return Promise.resolve(gNotes)
 }
 
-function edit(noteId, updated){
+function edit(noteId, updated) {
     var note = gNotes.find(note => note.id === noteId);
-    note.info.txt= updated
+    note.info.txt = updated
     _saveNotesToStorage();
     return Promise.resolve(gNotes);
 
 }
+
+function changeBgc(noteId, color) {
+    var note = gNotes.find(note => note.id === noteId);
+    note.backgroundColor = color;
+    _saveNotesToStorage();
+    return Promise.resolve(gNotes);
+
+}
+
 
 function remove(noteId) {
     gNotes = gNotes.filter(note => note.id !== noteId);
@@ -103,37 +80,43 @@ function _saveNotesToStorage(notesFromStorage = gNotes) {
 function getNotes() {
     var notes = [
         {
-            id: '1234a',
+            id: utilService.makeId(),
             type: "NoteText",
             isPinned: false,
             info: {
-                txt: "Fullstack Me Baby!"
-            }
-        },
-        {
-            id: '5678b',
-            type: "NoteText",
-            isPinned: false,
-            info: {
-                txt: "Render a list of components, use dynamic components to show different types of notes"
-            }
+                txt: "2 lbs ground beef, salt and pepper, 2 Tablespoons butter, 2 Tablespoons all-purpose flour, 1/4 teaspoon mustard powder, 3/4 cup beer"
+            },
+            backgroundColor: "yellow"
+       
         },
 
         {
-            id: '91011c',
+            id: utilService.makeId(),
+            type: "NoteText",
+            isPinned: false,
+            info: {
+                txt: "Barça have had 12 different goalscorers in LaLiga, more than their closest rivals Betis and Valladolid with 11 each. Cadiz, Elche and Eibar round off the top three with 6."
+            },
+            backgroundColor: "purple"
+        },
+
+        {
+            id: utilService.makeId(),
             type: "NoteText",
             isPinned: false,
             info: {
                 txt: "Allow creating, updating and deleting notes (CRUD)"
-            }
+            },
+            backgroundColor: "green"
         },
         {
-            id: '121314d',
+            id: utilService.makeId(),
             type: "NoteText",
             isPinned: false,
             info: {
                 txt: "For React, here is the basic idea of implementing Dynamic components"
-            }
+            },
+            backgroundColor: "pink"
         }
 
     ]

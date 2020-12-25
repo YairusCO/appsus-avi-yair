@@ -53,11 +53,15 @@ export class KeepApp extends React.Component {
             this.loadNotes();
         });
     };
+
+    changeColor = (noteId, color) => {
+        
+        noteService.changeBgc(noteId, color).then(() => {
+            this.loadNotes();
+        });
+    };
   
   
-
-
-
 
     render() {
         return (
@@ -65,7 +69,7 @@ export class KeepApp extends React.Component {
 
                 <h1 >Keep.</h1>
                 <AddNote addNote={this.addNote} />
-                <NoteList notes={this.getNotesForDisplay()} onRemove={this.onRemoveNote} onEdit={this.onEditNote} />
+                <NoteList notes={this.getNotesForDisplay()} onRemove={this.onRemoveNote} onEdit={this.onEditNote} onChangeColor={this.changeColor} />
 
 
             </section>
