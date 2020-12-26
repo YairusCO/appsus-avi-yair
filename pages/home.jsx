@@ -1,3 +1,4 @@
+const { NavLink, withRouter } = ReactRouterDOM;
 
 
 export class Home extends React.Component {
@@ -9,9 +10,10 @@ export class Home extends React.Component {
             <div className="jumbo">
             <section>
                 <img className="appsus-logo" src="assets/img/appsus.png" />
-                <h2 className="misskeepLogo homebtn">Miss Book</h2>
-                <h2 className="misskeepLogo homebtn">Mister Mail</h2>
-                <h2 className="misskeepLogo homebtn">Miss Keep</h2>
+                <h1 className="btnhome"><NavLink to="/keep">Miss Keep</NavLink></h1>
+                <h1 className="btnhome"><NavLink to="/book">Miss Book</NavLink></h1>
+                <h1 className="btnhome"><NavLink to="/mail">Mister Mail</NavLink></h1>
+                
 
 
             </section>
@@ -19,4 +21,4 @@ export class Home extends React.Component {
         )
     }
 }
-
+export const AppHeader = withRouter(Home);

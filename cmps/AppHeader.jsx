@@ -9,6 +9,7 @@ function _AppHeader(props) {
             <li><NavLink activeClassName="my-active" exact to="/">Home</NavLink></li>
             <li><NavLink to="/keep">Keep</NavLink></li>
             <li><NavLink to="/mail">Mail</NavLink></li>
+            <li><NavLink to="/book">Book</NavLink></li>
 
         </ul>
 
