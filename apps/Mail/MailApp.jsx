@@ -67,7 +67,8 @@ export class MailApp extends React.Component {
         
         return (
             <section className="MailApp-css">
-                 <h2 >Mail</h2>
+                 <img className="mister-mail" src="assets/img/postman-147824_640.png"/>
+                 <h2 className="title-mail" >Mister Mail</h2>
                   <MailFilter setFilter={this.onSetFilter} subjectFilter={this.state.filterBy.subject} />
                
                 <MailList msgs={this.msgsForDisplay} onRemove={this.onRemoveMsg} onRead={this.onReadMsg} />

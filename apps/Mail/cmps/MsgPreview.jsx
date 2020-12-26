@@ -4,12 +4,12 @@ export function MsgPreview({ msg, onRemove, onRead }) {
   return (
     <div className="msg-preview">
     
-        <h1>{msg.subject}</h1>
+        <h1 className="none">{msg.subject}</h1>
       
-      <h2>{msg.body}</h2>
+      <h2 className="none">{msg.body}</h2>
       <div>
         {" "}
-        <div>{`${new Date(msg.sentAt).toLocaleDateString()}`}</div>
+        <div className="none">{`${new Date(msg.sentAt).toLocaleDateString()}`}</div>
         <button
           onClick={() => {
             onRemove(msg.id);

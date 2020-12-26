@@ -37,7 +37,7 @@ a {
     cursor: pointer;
 }
 
-a:hover {
+.toHover:hover {
     color: rgb(130, 183, 200);
 }
 

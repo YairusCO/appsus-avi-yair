@@ -28,18 +28,18 @@ function getById(id) {
 
 function _getDemoMsgs() {
     var msgs = [
-        { subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt: 1451133930594, id: 1, category: "inbox" },
-        { subject: 'hello', body: 'Pick up!', isRead: true, sentAt: 1551133930595, id: 2, category: "inbox" },
-        { subject: 'bye!', body: 'Pick up!', isRead: false, sentAt: 1651133930596, id: 3, category: "inbox" },
-        { subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt: 1451133930594, id: 4, category: "inbox" },
-        { subject: 'hello', body: 'Pick up!', isRead: true, sentAt: 1551133930595, id: 5, category: "inbox" },
-        { subject: 'bye!', body: 'Pick up!', isRead: false, sentAt: 1651133930596, id: 6, category: "inbox" },
-        { subject: 'Wassap 9090?', body: 'Pick up!', isRead: false, sentAt: 1451133930594, id: 7, category: "sent" },
-        { subject: 'hello 6767', body: 'Pick up!', isRead: true, sentAt: 1551133930595, id: 8, category: "sent" },
-        { subject: 'bye!', body: 'Pick up!', isRead: false, sentAt: 1651133930596, id: 9, category: "sent" },
-        { subject: 'Wassap from sent?', body: 'Pick up!', isRead: false, sentAt: 1451133930594, id: 10, category: "sent" },
-        { subject: 'hello setn', body: 'Pick up!', isRead: true, sentAt: 1551133930595, id: 11, category: "sent" },
-        { subject: 'bye! 378378', body: 'Pick up!', isRead: false, sentAt: 1651133930596, id: 12, category: "sent" },
+        { subject: 'Duis aute irure dolor', body: 'Ut enim ad minim veniam.... ', isRead: false, sentAt: 1451133930594, id: 1, category: "inbox" },
+        { subject: 'Duis aute irure dolor?', body: 'Ut enim ad minim veniam.... ', isRead: true, sentAt: 1551133930595, id: 2, category: "inbox" },
+        { subject: 'Duis aute irure dolor!', body: 'Ut enim ad minim veniam.... ', isRead: false, sentAt: 1651133930596, id: 3, category: "inbox" },
+        { subject: 'Duis aute irure dolor?', body: 'Ut enim ad minim veniam.... ', isRead: false, sentAt: 1451133930594, id: 4, category: "inbox" },
+        { subject: 'Duis aute irure dolor', body: 'Ut enim ad minim veniam.... ', isRead: true, sentAt: 1551133930595, id: 5, category: "inbox" },
+        { subject: 'Duis aute irure dolor!', body: 'Ut enim ad minim veniam....', isRead: false, sentAt: 1651133930596, id: 6, category: "inbox" },
+        { subject: 'Duis aute irure dolor 9090?', body: 'Ut enim ad minim veniam....', isRead: false, sentAt: 1451133930594, id: 7, category: "sent" },
+        { subject: 'Duis aute irure dolor 6767', body: 'Ut enim ad minim veniam....', isRead: true, sentAt: 1551133930595, id: 8, category: "sent" },
+        { subject: 'bye!', body: 'Ut enim ad minim veniam....', isRead: false, sentAt: 1651133930596, id: 9, category: "sent" },
+        { subject: 'Duis aute irure from sent?', body: 'Ut enim ad minim veniam....', isRead: false, sentAt: 1451133930594, id: 10, category: "sent" },
+        { subject: 'Duis aute irure dolor set', body: 'Ut enim ad minim veniam....', isRead: true, sentAt: 1551133930595, id: 11, category: "sent" },
+        { subject: 'Duis aute irure dolor! 378378', body: 'Ut enim ad minim veniam....', isRead: false, sentAt: 1651133930596, id: 12, category: "sent" },
     ];
     return msgs;
 }

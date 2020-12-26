@@ -8,12 +8,52 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-}
-
-.MailApp-css h2 {
-    margin-top: 100px;
+    align-items: center;
 }
 
 .msg-filter {
     margin: 0 auto 100px auto;
+}
+
+.msg-list {
+    width: 80%;
+}
+
+.none {
+    display: flex;
+    width: 100%;
+}
+
+.mister-mail {
+    margin-top: 10px;
+    height: 300px;
+    margin-top: 54px;
+    transition: ease-in-out 600ms;
+}
+
+.mister-mail:hover {
+    transform: scale(1.1);
+}
+
+.title-mail {
+    width: 300px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3em;
+    background-color: rgb(209, 230, 173);
+    padding: 10px;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: -20px;
+    transition: ease-in-out 600ms;
+    cursor: pointer;
+}
+
+.title-mail:hover {
+    transform: scale(1.1);
+}
+
+.msg-filter button,
+.msg-filter input,
+.msg-filter select {
+    border-radius: 8px;
 }

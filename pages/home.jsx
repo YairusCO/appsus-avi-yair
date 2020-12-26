@@ -10,11 +10,11 @@ export class Home extends React.Component {
             <div className="jumbo">
             <section>
                 <img className="appsus-logo" src="assets/img/appsus.png" />
-                <h1 className="btnhome"><NavLink to="/keep">Miss Keep</NavLink></h1>
-                <h1 className="btnhome"><NavLink to="/book">Miss Book</NavLink></h1>
-                <h1 className="btnhome"><NavLink to="/mail">Mister Mail</NavLink></h1>
+                <h1 className="btnhome"><NavLink  className="toHover" to="/keep">Miss Keep</NavLink></h1>
+                <h1 className="btnhome"><NavLink  className="toHover" to="/book">Miss Book</NavLink></h1>
+                <h1 className="btnhome"><NavLink  className="toHover" to="/mail">Mister Mail</NavLink></h1>
                 
-
+               
 
             </section>
             </div>

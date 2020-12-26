@@ -37,7 +37,7 @@ export class MailFilter extends React.Component {
   render() {
     return (
       <section className="msg-filter">
-                 <button onClick={() => {this.handleMailBox('inbox')}}
+                 <button  onClick={() => {this.handleMailBox('inbox')}}
             >inbox</button>
                  <button onClick={() => {this.handleMailBox('sent')}}
             >sent</button>
