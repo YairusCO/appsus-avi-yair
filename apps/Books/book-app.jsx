@@ -47,7 +47,7 @@ export class BookApp extends React.Component {
     }
 
     onSelectBook = (book) => {
-        console.log('book selected:', book)
+        // console.log('book selected:', book)
         this.setState({ selectedBook: book })
     }
 

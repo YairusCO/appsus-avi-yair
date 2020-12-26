@@ -173,6 +173,7 @@ h2 {
 .missbook {
     margin-top: 10px;
     width: 110px;
+    margin-top: 54px;
     transition: ease-in-out 600ms;
 }
 
@@ -239,7 +240,7 @@ h2 {
     border-radius: 8px;
     background-color: rgb(209, 230, 173);
     margin: auto;
-    margin-top: 20px;
+    margin-top: 45px;
     padding: 10px;
 }
 
