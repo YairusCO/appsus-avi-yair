@@ -1,6 +1,6 @@
 import { bookService } from "../../services/book-service.js";
-import { BookList } from '../cmps/book-app/book-list.jsx';
-import { BookFilter } from "../cmps/book-app/book-filter.jsx"
+import { BookList } from './cmps/book-app/book-list.jsx';
+import { BookFilter } from "./cmps/book-app/book-filter.jsx"
 import { BookDetails } from './book-details.jsx';
 
 

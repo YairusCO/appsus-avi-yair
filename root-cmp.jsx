@@ -3,7 +3,7 @@
 import { Home } from './pages/home.jsx';
 import { AppHeader } from './cmps/AppHeader.jsx';
 import { AppFooter } from './cmps/AppFooter.jsx';
-import { BookApp } from './apps/books/book-app.jsx';
+import { BookApp } from './apps/Books/book-app.jsx';
 import { MailApp } from './apps/Mail/MailApp.jsx';
 import { KeepApp } from './apps/Keep/KeepApp.jsx';
 

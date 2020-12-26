@@ -1,6 +1,6 @@
-import { bookService } from '../../services/book-service'
-import { ReviewAdd } from '../cmps/review-add.jsx';
-import { Reviews } from '../cmps/reviews.jsx';
+import { bookService } from '../../services/book-service.js'
+import { ReviewAdd } from './cmps/review-add.jsx';
+import { Reviews } from './cmps/reviews.jsx';
 
 export class BookDetails extends React.Component {
 
