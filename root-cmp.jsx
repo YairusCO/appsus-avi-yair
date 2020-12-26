@@ -6,6 +6,8 @@ import { AppFooter } from './cmps/AppFooter.jsx';
 import { BookApp } from './apps/Books/book-app.jsx';
 import { MailApp } from './apps/Mail/MailApp.jsx';
 import { KeepApp } from './apps/Keep/KeepApp.jsx';
+import { BookDetails } from './apps/Books/book-details.jsx';
+
 
 
 const Router = ReactRouterDOM.HashRouter;
@@ -20,6 +22,7 @@ export class App extends React.Component {
                 <AppHeader />
                 <section className="app">
                     <Switch>
+                        <Route path="/book/:id" component={BookDetails} />
                         <Route path="/book" component={BookApp} />
                         <Route path="/keep" component={KeepApp} />
                         <Route path="/mail" component={MailApp} />

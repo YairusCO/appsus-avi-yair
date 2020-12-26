@@ -16,7 +16,7 @@ export function NotePreview({ note, onRemove, onEdit, onChangeColor, onPin }) {
 
             <img className="note-img" src={`${note.info.imgUrl}`} alt="" />
 
-            <h4 contentEditable="true"
+            <h4 contentEditable="true" suppressContentEditableWarning={true}
                 onBlur={(ev) => {
                     // console.log(note.id, 'txt:', ev.currentTarget.textContent)
                     ev.preventDefault();
@@ -32,8 +32,8 @@ export function NotePreview({ note, onRemove, onEdit, onChangeColor, onPin }) {
 
             >{note.info.txt}</h4>
 
-            <p className="created-at">Created at {`${new Date(note.createdAt)}`}</p>
-            <p className={note.updatedAt ? "updated-at": "hidden"}>Updated at {`${new Date(note.updatedAt)}`}</p>
+            <p className="created-at">Created at {`${new Date(note.createdAt).toLocaleTimeString()}`} </p>
+            <p className={note.updatedAt ? "updated-at": "hidden"}>Updated at {`${new Date(note.updatedAt).toLocaleTimeString() } `}</p>
 
 
             <button className="colorBtn white" onClick={(ev) => {
