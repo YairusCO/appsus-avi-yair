@@ -41,7 +41,6 @@ export class AddNote extends React.Component {
         return (<section className="form-note">
             <form className="form-input" onSubmit={this.onAddNote}>
                 <input className="keep-input" value={note.info.txt} onChange={this.onInputChange} type="text" name="txt" placeholder="What's on your mind?" />
-                {/* <button className="keep-btn" type="submit">KEEP</button> */}
             </form>
         </section>
         )

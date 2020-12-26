@@ -7,10 +7,30 @@ body {
  
     text-align: center;
 }
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-size:16px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+
 nav{
     width: 100%;
     height: 45px;
-    background-color: rgb(3, 3, 3);
+    background-color:black;;
     
 }
 ul {
@@ -23,11 +43,22 @@ ul {
 
 li {
     padding: 5px;
-    color:  #333;
+    color:  rgb(186, 182, 182);
     display: inline-block;
     font-family: 'Bebas Neue', cursive;
     font-size: 1.3em;
     text-align: center;
+}
+
+.note-list {
+    max-width: 1100px;
+    margin: auto;
+}
+.jumbo {
+    /* background-color: rgb(0, 0, 0); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 h1 {
@@ -39,6 +70,28 @@ h1 {
     text-align: center;
 
 }
+
+h5{
+    font-family: 'Oswald', sans-serif;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 300;
+    margin-top:15px;
+    margin-left:10px;
+    color:  rgb(159, 159, 159);
+
+}
+
+.appsus-logo {
+    width: 90vw;
+    padding: 10px;
+    display: inline-block;
+    margin:auto;
+    margin-top: 20px;
+
+
+}
+
 
 .misskeepLogo{
     font-family: 'Bebas Neue', cursive;
@@ -52,6 +105,16 @@ h1 {
     transform: scale(1.1);
     
 }
+.homebtn{
+    width: 30vh;
+    display:block;
+
+    margin:auto;
+    margin-top: 15px;
+
+
+}
+
 .misskeep {
     margin-top: 10px;
     width: 150px;
@@ -62,6 +125,13 @@ h1 {
     
 }
 
+.note-img {
+    width: 300px;
+    display: block;
+    margin:auto;
+    margin-top:10px;
+}
+
 .note-preview{
     width: 300px;
     background-color: #fff;
@@ -70,9 +140,9 @@ h1 {
     margin:auto;
     border-radius: 10px;
     text-align: left;
-    margin-left:15px;
-    margin-right:15px;
-    margin-top: 15px;
+    margin-left:10px;
+    margin-right:10px;
+    margin-top: 20px;
     display: inline-block;
 }
 
@@ -148,6 +218,17 @@ h1 {
 
 }
 
+.updated-at{
+    font-family: 'Bebas Neue', cursive;
+    font-size: .7em;
+    color: rgb(110, 109, 109);
+    background-color:yellow;
+    text-align: left;
+    margin-top:-10px;
+
+
+}
+
 
 .white {
     color: rgb(255, 255, 255);
@@ -171,6 +252,11 @@ h1 {
     color: rgb(255, 192, 203);
     background-color:rgb(255, 192, 203);  
 }
+
+.hidden {
+    display:none;
+}
+
 
 
 

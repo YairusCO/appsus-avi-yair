@@ -1,13 +1,13 @@
 import { NotePreview } from "./NotePreview.jsx";
 const {Link} = ReactRouterDOM
 
-export function NoteList({ notes, onRemove, onEdit, onChangeColor }) {
+export function NoteList({ notes, onRemove, onEdit, onChangeColor, onPin }) {
 
     return (
         notes.map(note => {
             return (
                     // <Link key={note.id} to={`note/${note.id}`}>
-                    <NotePreview key={note.id} note={note} onRemove={onRemove} onEdit={onEdit} onChangeColor={onChangeColor}  />
+                    <NotePreview key={note.id} note={note} onRemove={onRemove} onEdit={onEdit} onChangeColor={onChangeColor} onPin={onPin} />
                     
                     // </Link>
 

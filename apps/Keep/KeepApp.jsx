@@ -61,6 +61,13 @@ export class KeepApp extends React.Component {
         });
     };
 
+    pinNote = (noteId) => {
+
+        noteService.pinItem(noteId).then(() => {
+            this.loadNotes();
+        });
+    };
+
 
 
     render() {
@@ -69,8 +76,9 @@ export class KeepApp extends React.Component {
                 <img className="misskeep" src="assets/img/misskeep.png" />
                 <h2 className="misskeepLogo">Miss Keep</h2>
                 <AddNote addNote={this.addNote} />
-                <NoteList notes={this.getNotesForDisplay()} onRemove={this.onRemoveNote} onEdit={this.onEditNote} onChangeColor={this.changeColor} />
-
+                <div className="note-list">
+                <NoteList notes={this.getNotesForDisplay()} onRemove={this.onRemoveNote} onEdit={this.onEditNote} onChangeColor={this.changeColor} onPin={this.pinNote} />
+                </div>
 
             </section>
         )

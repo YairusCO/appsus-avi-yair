@@ -1,5 +1,5 @@
 const { Link } = ReactRouterDOM;
-export function NotePreview({ note, onRemove, onEdit, onChangeColor }) {
+export function NotePreview({ note, onRemove, onEdit, onChangeColor, onPin }) {
 
 
     return (
@@ -14,20 +14,27 @@ export function NotePreview({ note, onRemove, onEdit, onChangeColor }) {
                 onRemove(note.id);
             }}>X</button>
 
+            <img className="note-img" src={`${note.info.imgUrl}`} alt="" />
+
             <h4 contentEditable="true"
                 onBlur={(ev) => {
                     // console.log(note.id, 'txt:', ev.currentTarget.textContent)
                     ev.preventDefault();
+                    onEdit(note.id, ev.currentTarget.textContent);
                     ev.currentTarget.style.backgroundColor = '';
-                    onEdit(note.id, ev.currentTarget.textContent)
+
                 }}
                 onFocus={(ev) => {
                     ev.preventDefault();
-                    ev.currentTarget.style.backgroundColor = '#d1e6ad';
+                    ev.currentTarget.style.backgroundColor = 'yellow';
                 }}
 
 
             >{note.info.txt}</h4>
+
+            <p className="created-at">Created at {`${new Date(note.createdAt)}`}</p>
+            <p className={note.updatedAt ? "updated-at": "hidden"}>Updated at {`${new Date(note.updatedAt)}`}</p>
+
 
             <button className="colorBtn white" onClick={(ev) => {
                 ev.preventDefault();
@@ -41,7 +48,7 @@ export function NotePreview({ note, onRemove, onEdit, onChangeColor }) {
 
             <button className="colorBtn purple" onClick={(ev) => {
                 ev.preventDefault();
-                onChangeColor(note.id,"purple");
+                onChangeColor(note.id, "purple");
             }}>o</button>
 
             <button className="colorBtn green" onClick={(ev) => {
@@ -54,8 +61,13 @@ export function NotePreview({ note, onRemove, onEdit, onChangeColor }) {
                 onChangeColor(note.id, "pink");
             }}>o</button>
 
-            <p className="created-at">Created at {note.createdAt}</p>
-       
+            {/* <button onClick={(ev) => {
+                ev.preventDefault();
+                onPin(note.id, "pink");
+            }}>pin</button>
+ */}
+
+
 
 
         </article >

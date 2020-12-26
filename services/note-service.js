@@ -7,6 +7,7 @@ export const noteService = {
     remove,
     edit,
     changeBgc,
+    // pinItem,
     getById,
     saveNote
 
@@ -52,9 +53,21 @@ function saveNote(note) {
     return Promise.resolve(gNotes)
 }
 
+// function pinItem(noteId){
+//     var note = gNotes.find(note => note.id === noteId);
+//     note.isPinned= true;
+//     var idx = gNotes.indexOf(note)
+//     gNotes.unshift(note);
+//     gNotes.splice(idx, 1);
+//     _saveNotesToStorage();
+//     return Promise.resolve(gNotes);
+
+// }
+
 function edit(noteId, updated) {
     var note = gNotes.find(note => note.id === noteId);
-    note.info.txt = updated
+    note.info.txt = updated;
+    note.updatedAt = Date.now();
     _saveNotesToStorage();
     return Promise.resolve(gNotes);
 
@@ -97,9 +110,34 @@ function getNotes() {
             type: "NoteText",
             isPinned: false,
             info: {
-                txt: "Barça have had 12 different goalscorers in LaLiga, more than their closest rivals Betis and Valladolid with 11 each. Cadiz, Elche and Eibar round off the top three with 6."
+                txt: "Barça have had 12 different goalscorers in LaLiga, more than their closest rivals Betis and Valladolid with 11 each."
             },
-            backgroundColor: "purple",
+            backgroundColor: "white",
+            createdAt: Date.now(),
+            
+        },
+
+        {
+            id: utilService.makeId(),
+            type: "NoteText",
+            isPinned: false,
+            info: {
+                txt: "Allow creating, updating and deleting notes (CRUD)",
+                // imgUrl: "https://therichpost.com/wp-content/uploads/2020/08/Reactjs-create-and-include-hedar-footer-files-1400x700.png"
+            },
+            backgroundColor: "green",
+            createdAt: Date.now(),
+            updatedAt: 1608990533129
+        },
+        {
+            id: utilService.makeId(),
+            type: "NoteText",
+            isPinned: false,
+            info: {
+                txt: "For React, here is the basic idea of implementing Dynamic components",
+                // imgUrl: "https://www.motocms.com/blog/wp-content/uploads/2017/09/featured-3.jpg"
+            },
+            backgroundColor: "white",
             createdAt: Date.now()
         },
 
@@ -108,21 +146,24 @@ function getNotes() {
             type: "NoteText",
             isPinned: false,
             info: {
-                txt: "Allow creating, updating and deleting notes (CRUD)"
+                txt: "The first Netflix series from Shonda Rhimes’s company updates the genre with modern race and gender attitudes (and lots of skin).",
             },
-            backgroundColor: "green",
-            createdAt: Date.now()
+            backgroundColor: "pink",
+            createdAt: Date.now(),
+            updatedAt: 1608990533129
         },
+
         {
             id: utilService.makeId(),
             type: "NoteText",
             isPinned: false,
             info: {
-                txt: "For React, here is the basic idea of implementing Dynamic components"
+                txt: "Isolation was unavoidable this year: Some albums embraced it, some raged against it, some tried to imagine a world without it.",
             },
-            backgroundColor: "pink",
+            backgroundColor: "purple",
             createdAt: Date.now()
         }
+
 
     ]
     return notes;
