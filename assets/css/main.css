@@ -1,12 +1,15 @@
 @import './apps/books/BooksMain.css';
+@import './apps/books/MailMain.css';
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 /* *{box-sizing: border-box;} */
+
 body {
     background-color: #82b7c8;
- 
     text-align: center;
 }
+
 .footer {
     position: fixed;
     left: 0;
@@ -14,7 +17,7 @@ body {
     width: 100%;
     background-color: black;
     color: white;
-    font-size:16px;
+    font-size: 16px;
     text-align: center;
     font-family: 'Oswald', sans-serif;
 }
@@ -26,13 +29,13 @@ body {
     width: 100%;
 }
 
-
-nav{
+nav {
     width: 100%;
     height: 45px;
-    background-color:black;;
-    
+    background-color: black;
+    ;
 }
+
 ul {
     margin: auto;
     display: inline-block;
@@ -43,7 +46,7 @@ ul {
 
 li {
     padding: 5px;
-    color:  rgb(186, 182, 182);
+    color: rgb(186, 182, 182);
     display: inline-block;
     font-family: 'Bebas Neue', cursive;
     font-size: 1.3em;
@@ -54,6 +57,7 @@ li {
     max-width: 1100px;
     margin: auto;
 }
+
 .jumbo {
     /* background-color: rgb(0, 0, 0); */
     display: flex;
@@ -63,56 +67,49 @@ li {
 
 h1 {
     padding: 5px;
-    color:  #333;
+    color: #333;
     display: block;
     font-family: 'Bebas Neue', cursive;
     font-size: 2.3em;
     text-align: center;
-
 }
 
-h5{
+h5 {
     font-family: 'Oswald', sans-serif;
     display: inline-block;
     font-size: 1em;
     font-weight: 300;
-    margin-top:15px;
-    margin-left:10px;
-    color:  rgb(159, 159, 159);
-
+    margin-top: 15px;
+    margin-left: 10px;
+    color: rgb(159, 159, 159);
 }
 
 .appsus-logo {
     width: 90vw;
     padding: 10px;
     display: inline-block;
-    margin:auto;
+    margin: auto;
     margin-top: 20px;
-
-
 }
 
-
-.misskeepLogo{
+.misskeepLogo {
     font-family: 'Bebas Neue', cursive;
     font-size: 2em;
     background-color: rgb(209, 230, 173);
     padding: 10px;
-    margin-top:-5px;
+    margin-top: -5px;
     transition: ease-in-out 600ms;
 }
-.misskeepLogo :hover{
+
+.misskeepLogo :hover {
     transform: scale(1.1);
-    
 }
-.homebtn{
+
+.homebtn {
     width: 30vh;
-    display:block;
-
-    margin:auto;
+    display: block;
+    margin: auto;
     margin-top: 15px;
-
-
 }
 
 .misskeep {
@@ -120,143 +117,135 @@ h5{
     width: 150px;
     transition: ease-in-out 600ms;
 }
-.misskeep:hover{
+
+.misskeep:hover {
     transform: scale(1.1);
-    
 }
 
 .note-img {
     width: 300px;
     display: block;
-    margin:auto;
-    margin-top:10px;
+    margin: auto;
+    margin-top: 10px;
 }
 
-.note-preview{
+.note-preview {
     width: 300px;
     background-color: #fff;
     color: rgb(88, 80, 80);
     padding: 10px;
-    margin:auto;
+    margin: auto;
     border-radius: 10px;
     text-align: left;
-    margin-left:10px;
-    margin-right:10px;
+    margin-left: 10px;
+    margin-right: 10px;
     margin-top: 20px;
     display: inline-block;
 }
 
-.note-preview h4{
+.note-preview h4 {
     color: rgb(88, 80, 80);
     font-size: 1.1em;
     font-weight: 400;
     outline: none;
     font-family: 'Oswald', sans-serif;
- 
 }
 
 .keep-input {
     width: 320px;
     height: 50px;
-    background-color:white;
+    background-color: white;
     display: block;
-    border:0px;
+    border: 0px;
     border-radius: 10px;
-    margin:auto;
+    margin: auto;
     margin-bottom: 20px;
     padding: 10px;
     font-size: 1.2em;
-    
     /* margin-right: 10px; */
 }
 
 .keep-btn {
     width: 50px;
     height: 30px;
-    border:0px;
+    border: 0px;
     border-radius: 10px;
 }
 
-.deleteBtn{
+.deleteBtn {
     border: 0px solid gray;
     background-color: red;
     color: white;
     /* border-radius: 16px; */
     margin: auto;
-    font-size:14px;
+    font-size: 14px;
     font-weight: 500;
     outline: none;
     cursor: pointer;
     transition: ease-in-out 600ms;
 }
 
-.deleteBtn:hover{
+.deleteBtn:hover {
     transform: scale(1.2);
 }
 
-.colorBtn{
+.colorBtn {
     border: 1px solid gray;
     border-radius: 20px;
     margin: auto;
-    margin-top:10px;
-    margin-right:3px;
-    font-size:16px;
+    margin-top: 10px;
+    margin-right: 3px;
+    font-size: 16px;
     outline: none;
     cursor: pointer;
     transition: ease-in-out 600ms;
 }
 
-.colorBtn:hover{
+.colorBtn:hover {
     transform: scale(1.2);
 }
 
-.created-at{
+.created-at {
     font-family: 'Bebas Neue', cursive;
     font-size: .7em;
     color: rgb(110, 109, 109);
     text-align: left;
-
 }
 
-.updated-at{
+.updated-at {
     font-family: 'Bebas Neue', cursive;
     font-size: .7em;
     color: rgb(110, 109, 109);
-    background-color:yellow;
+    background-color: yellow;
     text-align: left;
-    margin-top:-10px;
-
-
+    margin-top: -10px;
 }
-
 
 .white {
     color: rgb(255, 255, 255);
-    background-color:rgb(255, 255, 255); 
+    background-color: rgb(255, 255, 255);
 }
+
 .yellow {
     color: rgb(253, 253, 165);
-    background-color: rgb(253, 253, 165); 
+    background-color: rgb(253, 253, 165);
 }
+
 .purple {
     color: rgb(197, 197, 232);
-    background-color:rgb(197, 197, 232);  
+    background-color: rgb(197, 197, 232);
 }
 
 .green {
-    color:  #d1e6ad;
-    background-color: #d1e6ad;  
+    color: #d1e6ad;
+    background-color: #d1e6ad;
 }
 
 .pink {
     color: rgb(255, 192, 203);
-    background-color:rgb(255, 192, 203);  
+    background-color: rgb(255, 192, 203);
 }
 
 .hidden {
-    display:none;
+    display: none;
 }
-
-
-
-
