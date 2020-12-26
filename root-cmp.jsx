@@ -21,11 +21,8 @@ export class App extends React.Component {
                 <AppHeader />
                 <section className="app">
                     <Switch>
-<<<<<<< HEAD
-                        <Route path="/mail/:id" component={MailDetails} />
-=======
+                    <Route path="/mail/:id" component={MailDetails} />
                         <Route path="/book" component={BookApp} />
->>>>>>> 904fda51080fdacf1e1063dc85d50b1152edb833
                         <Route path="/keep" component={KeepApp} />
                         <Route path="/mail" component={MailApp} />
                         <Route path="/" component={Home} />
