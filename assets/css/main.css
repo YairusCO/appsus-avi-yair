@@ -8,6 +8,8 @@
 body {
     background-color: #82b7c8;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer {

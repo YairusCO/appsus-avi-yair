@@ -7,7 +7,7 @@ export function MailList({ msgs, onRemove , onRead}) {
             {msgs.map(msg => {
                 return    <Link key={msg.id} to={`msg/${msg.id}`}>
                 <MsgPreview key={msg.id} msg={msg}
-                    onRemove={onRemove}  onRead={onRead} />;
+                    onRemove={onRemove}  onRead={onRead} />
                     </Link>
             })
             }

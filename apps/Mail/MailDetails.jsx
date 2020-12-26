@@ -16,7 +16,7 @@ onClose = () => {
 
 render(){
     const {msg} = this.state
-    if(!msg)return <h1>Loasing..</h1>
+    if(!msg)return <h1>Loading..</h1>
     return <article className="mail-details">
            <button onClick={() => this.props.history.push('/mail')}>X</button>
             <h2>{msg.subject}</h2>

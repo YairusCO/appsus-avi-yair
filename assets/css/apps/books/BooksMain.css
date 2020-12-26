@@ -1,16 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 /* *{box-sizing: border-box;} */
+
 body {
     background-color: rgb(130, 183, 200);
-    
     text-align: center;
 }
-nav{
+
+nav {
     width: 100%;
     height: 45px;
     background-color: rgb(3, 3, 3);
 }
+
 ul {
     margin: auto;
     display: inline-block;
@@ -21,87 +24,80 @@ ul {
 
 li {
     padding: 5px;
-    color:  #333;
+    color: #333;
     display: inline-block;
     font-family: 'Bebas Neue', cursive;
     font-size: 1.3em;
     text-align: center;
 }
-a{
-    color:  white;
+
+a {
+    color: white;
     transition: ease-in-out 400ms;
     cursor: pointer;
 }
 
-a:hover{
+a:hover {
     color: rgb(130, 183, 200);
-
 }
-.title-home{
+
+.title-home {
     width: 300px;
     font-family: 'Bebas Neue', cursive;
-    font-size: 3em; 
+    font-size: 3em;
     background-color: rgb(209, 230, 173);
     padding: 10px;
     border-radius: 10px;
     margin: auto;
-    margin-top:-20px;
+    margin-top: -20px;
     transition: ease-in-out 600ms;
     cursor: pointer;
 }
-.title-home:hover{
+
+.title-home:hover {
     transform: scale(1.1);
-    
 }
 
-.title-about{
+.title-about {
     width: 250px;
     font-family: 'Bebas Neue', cursive;
-    font-size: 3em;    
-    background-color:  rgb(130, 183, 200);
+    font-size: 3em;
+    background-color: rgb(130, 183, 200);
     padding: 10px;
     border-radius: 10px;
     margin: auto;
-    margin-top:-20px;
+    margin-top: -20px;
     transition: ease-in-out 600ms;
     cursor: pointer;
 }
-.title-about:hover{
+
+.title-about:hover {
     transform: scale(1.1);
-    
 }
 
-
-h4{
-  
+h4 {
     font-family: 'Oswald', sans-serif;
     font-size: 1.2em;
     color: rgb(251, 255, 255);
     margin: auto;
-    margin-top:10px;
-    
-
+    margin-top: 10px;
 }
 
-
-
 h2 {
-    
     width: 130px;
     margin: auto;
     margin-top: -17px;
     margin-bottom: 20px;
     border-radius: 18px;
-
 }
 
 .input {
     width: 250px;
     padding: 5px;
-    border:0px;
-    border-radius: 8px; 
+    border: 0px;
+    border-radius: 8px;
     color: #333;
-    margin :auto;
+    margin: auto;
     margin-bottom: 20px;
     margin-right: 3px;
     margin-left: 3px;
@@ -110,15 +106,16 @@ h2 {
 .input-num {
     width: 100px;
     padding: 5px;
-    border:0px;
-    border-radius: 8px; 
+    border: 0px;
+    border-radius: 8px;
     color: #333;
-    margin :auto;
+    margin: auto;
     margin-bottom: 20px;
     margin-right: 3px;
     margin-left: 3px;
 }
-.about{
+
+.about {
     width: 75vw;
     border-radius: 8px;
     background-color: rgb(209, 230, 173);
@@ -127,7 +124,7 @@ h2 {
     padding: 10px;
 }
 
-.about p{
+.about p {
     text-align: left;
     margin: auto;
     padding: 20px;
@@ -136,7 +133,7 @@ h2 {
     color: rgb(80, 81, 82);
 }
 
-.about button{
+.about button {
     font-family: 'Oswald', sans-serif;
     font-size: 2em;
     margin-left: 96%;
@@ -144,25 +141,25 @@ h2 {
     color: white;
     background-color: red;
     border: 0px;
-    outline: none;  
+    outline: none;
 }
 
-.about button:hover{
+.about button:hover {
     background-color: rgb(57, 56, 56);
-
 }
 
-.missbook-home{
+.missbook-home {
     width: 350px;
     transition: ease-in-out 600ms;
     cursor: pointer;
     margin-top: 10px;
 }
-.missbook-home:hover{
+
+.missbook-home:hover {
     transform: scale(1.1);
 }
 
-.missbook-about{
+.missbook-about {
     width: 130px;
     /* margin-top: 10px; */
 }
@@ -178,9 +175,9 @@ h2 {
     width: 110px;
     transition: ease-in-out 600ms;
 }
-.missbook:hover{
+
+.missbook:hover {
     transform: scale(1.1);
-    
 }
 
 .book-app .book-list {
@@ -191,19 +188,19 @@ h2 {
     flex-wrap: wrap;
 }
 
-.book-app h2{
+.book-app h2 {
     font-family: 'Bebas Neue', cursive;
     font-size: 2em;
     background-color: rgb(209, 230, 173);
     padding: 10px;
     transition: ease-in-out 600ms;
 }
-.book-app h2:hover{
+
+.book-app h2:hover {
     transform: scale(1.1);
-    
 }
 
-.book-preview  {
+.book-preview {
     width: 250px;
     height: 380px;
     text-decoration: none;
@@ -219,6 +216,7 @@ h2 {
 .book-preview:hover {
     transform: scale(1.05);
 }
+
 .book-icon {
     width: 120px;
 }
@@ -229,21 +227,23 @@ h2 {
     font-weight: 400;
     color: rgb(133, 213, 226);
 }
+
 .book-preview h3 {
     font-family: 'Oswald', sans-serif;
     font-size: 1.2em;
     font-weight: 300;
 }
 
-.book-details{
+.book-details {
     width: 75vw;
     border-radius: 8px;
     background-color: rgb(209, 230, 173);
     margin: auto;
-    margin-top:20px;
+    margin-top: 20px;
     padding: 10px;
 }
-.book-details h1{
+
+.book-details h1 {
     font-family: 'Bebas Neue', cursive;
     font-size: 2.5em;
     margin-top: 5px;
@@ -252,32 +252,32 @@ h2 {
     color: rgb(20, 23, 24);
 }
 
-.book-details h2{
+.book-details h2 {
     font-family: 'Bebas Neue', cursive;
     font-size: 2em;
     background-color: rgb(130, 183, 200);
     padding: 10px;
     transition: ease-in-out 600ms;
 }
-.book-details h2:hover{
+
+.book-details h2:hover {
     transform: scale(1.1);
-    
 }
 
-.book-details h3{
+.book-details h3 {
     font-family: 'Oswald', sans-serif;
     margin-top: 5px;
     font-size: 1.2em;
     font-weight: 300;
 }
-.book-details h4{
+
+.book-details h4 {
     font-family: 'Oswald', sans-serif;
     font-size: 1.1em;
     color: rgb(80, 81, 82);
-   
 }
 
-.book-details h5{
+.book-details h5 {
     width: 240px;
     margin: auto;
     border-radius: 3px;
@@ -286,15 +286,15 @@ h2 {
     font-size: .9em;
     color: rgb(245, 246, 243);
     background: rgb(23, 71, 144);
-   
-}
-.book-details p{
-    font-family: 'Oswald', sans-serif;
-    font-size: 1em;
-    color: rgb(80, 81, 82);  
 }
 
-.book-details button{
+.book-details p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1em;
+    color: rgb(80, 81, 82);
+}
+
+.book-details button {
     font-family: 'Oswald', sans-serif;
     font-size: 2em;
     margin-left: 96%;
@@ -302,15 +302,14 @@ h2 {
     color: white;
     background-color: red;
     border: 0px;
-    outline: none;  
+    outline: none;
 }
 
-.book-details button:hover{
+.book-details button:hover {
     background-color: rgb(57, 56, 56);
-
 }
 
-.book-details .tumbnail{
+.book-details .tumbnail {
     width: 250px;
     border-radius: 5px;
     padding: 10px;
@@ -321,69 +320,66 @@ h2 {
     background-color: darkcyan;
     padding: 5px;
     width: 200px;
-    text-align: center;    
+    text-align: center;
 }
 
-.form-review{
+.form-review {
     width: 95%;
     background-color: #fff;
-    margin:auto;
+    margin: auto;
     border-radius: 8px;
 }
 
 .form-review h1 {
     font-size: 28px;
-    margin-top:20px;
-    color:  rgb(80, 81, 82);
+    margin-top: 20px;
+    color: rgb(80, 81, 82);
 }
 
-.form-review label{
+.form-review label {
     display: block;
     font-family: 'Oswald', sans-serif;
     font-size: 1em;
-    margin-top:10px;
+    margin-top: 10px;
 }
-.form-review textarea{
+
+.form-review textarea {
     width: 250px;
-    color:  rgb(160, 161, 163);
+    color: rgb(160, 161, 163);
     font-family: 'Oswald', sans-serif;
     font-size: 1em;
 }
 
-.form-review input{
+.form-review input {
     width: 250px;
-    color:  rgb(160, 161, 163);
+    color: rgb(160, 161, 163);
     font-family: 'Oswald', sans-serif;
     font-size: 1em;
 }
 
-.form-review .add-btn{
-    margin:auto;
-    margin-top:10px;
-    margin-bottom:10px;
+.form-review .add-btn {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 250px;
     background-color: rgb(1, 1, 1);
     font-family: 'Oswald', sans-serif;
     font-size: 1.3em;
 }
 
-
-.book-review{
+.book-review {
     font-family: 'Oswald', sans-serif;
     font-size: 1em;
     padding: 10px;
-
     border-radius: 5px;
     width: 94%;
     background-color: #fff;
-    margin:auto;
+    margin: auto;
     border-radius: 8px;
-    margin-bottom:20px
-   
- 
+    margin-bottom: 20px
 }
 
-.book-review button{
+.book-review button {
     font-family: 'Oswald', sans-serif;
     font-size: 1em;
     margin-left: 96%;
@@ -392,24 +388,25 @@ h2 {
     color: white;
     background-color: red;
     border: 0px;
-    outline: none;  
+    outline: none;
 }
 
-.add-book h2{
+.add-book h2 {
     font-family: 'Bebas Neue', cursive;
     font-size: 2em;
     background-color: rgb(209, 230, 173);
     padding: 10px;
     transition: ease-in-out 600ms;
 }
-.add-book h2:hover{
+
+.add-book h2:hover {
     transform: scale(1.1);
-    
 }
 
 .red {
     color: red;
 }
-.green{
+
+.green {
     color: green;
 }

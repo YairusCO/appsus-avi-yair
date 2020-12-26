@@ -1,0 +1,19 @@
+.msg-preview {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.MailApp-css {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.MailApp-css h2 {
+    margin-top: 100px;
+}
+
+.msg-filter {
+    margin: 0 auto 100px auto;
+}

@@ -40,7 +40,7 @@ export class MailFilter extends React.Component {
                  <button onClick={() => {this.handleMailBox('inbox')}}
             >inbox</button>
                  <button onClick={() => {this.handleMailBox('sent')}}
-            >send</button>
+            >sent</button>
         <input
           type="text"
           name="subject"
