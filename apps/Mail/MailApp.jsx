@@ -66,7 +66,7 @@ export class MailApp extends React.Component {
     render() {
         
         return (
-            <section>
+            <section className="MailApp-css">
                   <MailFilter setFilter={this.onSetFilter} subjectFilter={this.state.filterBy.subject} />
                 <h2>Mail</h2>
                 <MailList msgs={this.msgsForDisplay} onRemove={this.onRemoveMsg} onRead={this.onReadMsg} />

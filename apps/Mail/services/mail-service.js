@@ -7,7 +7,8 @@ _createMsgs();
 export const mailService = {
     query,
     remove,
-    isRead
+    isRead,
+    getById
 }
 
 function _createMsgs() {
@@ -19,6 +20,11 @@ function _createMsgs() {
 }
 
 //localStorage.clear();
+
+function getById(id) {
+    var msgId = gmsgs.find(msg => msg.id === id)
+    return Promise.resolve(msgId)
+}
 
 function _getDemoMsgs() {
     var msgs = [

@@ -1,5 +1,6 @@
 // import { AppHeader } from './cmps/app-header.jsx';
 // import { About } from './pages/about.jsx'; 
+import { MailDetails } from './apps/Mail/MailDetails.jsx';
 import { Home } from './pages/home.jsx';
 import { AppHeader } from './cmps/AppHeader.jsx';
 import { AppFooter } from './cmps/AppFooter.jsx';
@@ -22,7 +23,11 @@ export class App extends React.Component {
                 <AppHeader />
                 <section className="app">
                     <Switch>
+<<<<<<< HEAD
                         <Route path="/book/:id" component={BookDetails} />
+=======
+                    <Route path="/mail/:id" component={MailDetails} />
+>>>>>>> 3f7a779b884744a5079b82e3bc681f929f920ce7
                         <Route path="/book" component={BookApp} />
                         <Route path="/keep" component={KeepApp} />
                         <Route path="/mail" component={MailApp} />
