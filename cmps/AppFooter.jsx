@@ -6,7 +6,7 @@ function _AppFooter(props) {
 
     return <nav className="footer">
      
-            <h5>© 2020 </h5>
+            <h5>© Coffeerights 2020 </h5>
             <h5>Terms</h5>
             <h5>Privacy</h5>
             <h5>Cookies</h5>
