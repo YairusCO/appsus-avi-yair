@@ -1,7 +1,12 @@
 .msg-preview {
     display: flex;
     align-items: center;
-    border: 1px solid black;
+    justify-content: center;
+    border: 1px solid white;
+    border-radius: 8px;
+    background-color: #333;
+    font-family: 'Bebas Neue', cursive;
+    color: rgb(130, 183, 200);
 }
 
 .MailApp-css {
@@ -15,18 +20,20 @@
     margin: 0 auto 100px auto;
 }
 
+.msg-filter button {}
+
 .msg-list {
     width: 80%;
 }
 
 .none {
-    display: flex;
+    color: rgb(130, 183, 200);
     width: 100%;
 }
 
 .mister-mail {
     margin-top: 10px;
-    height: 300px;
+    height: 200px;
     margin-top: 54px;
     transition: ease-in-out 600ms;
 }
@@ -36,14 +43,13 @@
 }
 
 .title-mail {
-    width: 300px;
+    width: 150px;
     font-family: 'Bebas Neue', cursive;
-    font-size: 3em;
+    font-size: 2em;
     background-color: rgb(209, 230, 173);
     padding: 10px;
     border-radius: 10px;
-    margin: auto;
-    margin-top: -20px;
+    margin: -20px auto 50px auto;
     transition: ease-in-out 600ms;
     cursor: pointer;
 }
@@ -55,5 +61,41 @@
 .msg-filter button,
 .msg-filter input,
 .msg-filter select {
+    width: 250px;
+    padding: 5px;
+    border: 0px;
     border-radius: 8px;
+    margin-bottom: 10px;
+    margin-right: 3px;
+    margin-left: 3px;
+    background-color: #333;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1em;
+    color: rgb(130, 183, 200);
+}
+
+.inner-pre {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btn-mail {
+    border: 0;
+    background-color: #333;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1em;
+    color: rgb(130, 183, 200);
+}
+
+.h-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.h-link h2 {
+    margin: auto;
 }

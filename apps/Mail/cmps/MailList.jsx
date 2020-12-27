@@ -5,10 +5,9 @@ export function MailList({ msgs, onRemove , onRead}) {
     return (
         <section className="msg-list">
             {msgs.map(msg => {
-                return    <Link key={msg.id} to={`msg/${msg.id}`}>
-                <MsgPreview key={msg.id} msg={msg}
+                return    <MsgPreview key={msg.id} msg={msg}
                     onRemove={onRemove}  onRead={onRead} />
-                    </Link>
+                   
             })
             }
         </section>
