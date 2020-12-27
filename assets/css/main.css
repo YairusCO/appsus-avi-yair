@@ -174,7 +174,8 @@ h5 {
 .keep-input {
     width: 320px;
     height: 50px;
-    background-color: white;
+    font-family: 'Bebas Neue', cursive;
+    color: rgb(130, 183, 200);
     display: block;
     border: 0px;
     border-radius: 10px;
